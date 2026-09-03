@@ -1,0 +1,5739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lyba Noor | Python Developer | ML & Data Analytics</title>
+
+    <meta name="description"
+          content="Lyba Noor — Python Developer, Machine Learning and Data Analytics enthusiast building practical AI, software and data-driven solutions.">
+
+    <style>
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root {
+    --bg: #070b14;
+    --bg-secondary: #0c1220;
+    --card: #101827;
+    --card-hover: #141e30;
+
+    --text: #f4f5f7;
+    --muted: #9ca6b8;
+
+    --border: rgba(255, 255, 255, 0.10);
+
+    --accent: #8b5cf6;
+    --accent-light: #a78bfa;
+
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(circle at 80% 10%, rgba(139, 92, 246, 0.10), transparent 30%),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1000;
+
+    background: rgba(7, 11, 20, 0.80);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+    width: min(100% - 40px, var(--max-width));
+
+    margin: auto;
+
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 21px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: var(--accent-light);
+}
+
+
+/* Hamburger */
+
+.menu-toggle {
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: rgba(139, 92, 246, 0.15);
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 18px;
+    height: 2px;
+
+    background: white;
+
+    transition: 0.3s;
+}
+
+
+/* Dropdown */
+
+.nav-menu {
+    position: absolute;
+
+    top: 82px;
+    right: 20px;
+
+    width: 230px;
+
+    padding: 14px;
+
+    background: rgba(13, 19, 32, 0.97);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.nav-menu.active {
+    display: flex;
+}
+
+.nav-menu a {
+    padding: 11px 13px;
+
+    color: var(--muted);
+
+    border-radius: 9px;
+
+    transition: 0.25s;
+}
+
+.nav-menu a:hover {
+    color: white;
+
+    background: rgba(139, 92, 246, 0.12);
+}
+
+.nav-divider {
+    height: 1px;
+
+    background: var(--border);
+
+    margin: 8px 0;
+}
+
+.nav-menu .resume-link {
+    color: var(--accent-light);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        130px 20px
+        80px;
+}
+
+.hero-container {
+    width: min(100%, var(--max-width));
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.hero-label {
+    color: var(--accent-light);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(46px, 6vw, 76px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2.5px;
+
+    max-width: 760px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--accent-light);
+}
+
+.hero-description {
+    color: var(--muted);
+
+    font-size: 17px;
+
+    max-width: 650px;
+
+    margin-top: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 32px;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    min-height: 48px;
+
+    padding: 0 20px;
+
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+.btn-primary {
+    background: var(--accent);
+
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #7c3aed;
+
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+
+    background: rgba(255,255,255,0.03);
+
+    color: white;
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent);
+
+    transform: translateY(-2px);
+}
+
+.social-links {
+    display: flex;
+
+    gap: 24px;
+
+    margin-top: 28px;
+}
+
+.social-links a {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    transition: 0.25s;
+}
+
+.social-links a:hover {
+    color: var(--accent-light);
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+    position: relative;
+
+    min-height: 470px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.orbit {
+    position: absolute;
+
+    border: 1px solid rgba(139, 92, 246, 0.25);
+
+    border-radius: 50%;
+}
+
+.orbit-one {
+    width: 420px;
+    height: 420px;
+}
+
+.orbit-two {
+    width: 300px;
+    height: 300px;
+}
+
+.code-card {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(100%, 430px);
+
+    padding: 24px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    background: rgba(16, 24, 39, 0.88);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35),
+        0 0 60px rgba(139, 92, 246, 0.08);
+}
+
+.code-header {
+    display: flex;
+
+    gap: 7px;
+
+    margin-bottom: 22px;
+}
+
+.code-header span {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #687386;
+}
+
+.code-content {
+    font-family: Consolas, monospace;
+
+    font-size: 14px;
+
+    color: #d7deeb;
+}
+
+.code-content p {
+    margin-bottom: 9px;
+}
+
+.indent {
+    padding-left: 22px;
+}
+
+.code-purple {
+    color: #c084fc;
+}
+
+.code-blue {
+    color: #60a5fa;
+}
+
+.code-green {
+    color: #86efac;
+}
+
+.stats-card {
+    position: absolute;
+
+    z-index: 3;
+
+    bottom: 25px;
+
+    right: 0;
+
+    width: 330px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: rgba(12, 18, 32, 0.96);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.stat {
+    padding: 17px;
+
+    text-align: center;
+
+    border-right: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.stat:nth-child(2),
+.stat:nth-child(4) {
+    border-right: none;
+}
+
+.stat:nth-child(3),
+.stat:nth-child(4) {
+    border-bottom: none;
+}
+
+.stat strong {
+    display: block;
+
+    color: var(--accent-light);
+
+    font-size: 17px;
+}
+
+.stat span {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SHARED SECTIONS
+========================================================= */
+
+.section-container {
+    width: min(100% - 40px, var(--max-width));
+
+    margin: auto;
+}
+
+.section-label {
+    color: var(--accent-light);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+
+    margin-bottom: 10px;
+}
+
+section h2 {
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1.1;
+
+    letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   BRIDGE
+========================================================= */
+
+.bridge-section {
+    padding: 30px 20px 100px;
+}
+
+.bridge-container {
+    width: min(100%, var(--max-width));
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 70px 1fr;
+
+    gap: 25px;
+
+    padding: 40px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(139, 92, 246, 0.08),
+            rgba(255,255,255,0.02)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+}
+
+.bridge-icon {
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: var(--accent-light);
+
+    border: 1px solid rgba(139, 92, 246, 0.4);
+
+    background: rgba(139, 92, 246, 0.10);
+
+    border-radius: 14px;
+
+    font-family: Consolas, monospace;
+
+    font-weight: 700;
+}
+
+.bridge-content {
+    max-width: 900px;
+}
+
+.bridge-content h2 {
+    margin-bottom: 18px;
+}
+
+.bridge-content p {
+    color: var(--muted);
+
+    max-width: 850px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-section {
+    padding: 80px 20px;
+}
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 40px;
+}
+
+.skill-card {
+    padding: 25px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    transition: 0.25s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(139, 92, 246, 0.45);
+
+    background: var(--card-hover);
+}
+
+.skill-number {
+    color: var(--accent-light);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.skill-card h3 {
+    margin-top: 25px;
+
+    font-size: 18px;
+}
+
+.skill-card p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-section {
+    padding: 100px 20px;
+}
+
+.projects-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 30px;
+}
+
+.section-description {
+    color: var(--muted);
+
+    margin-top: 12px;
+
+    max-width: 550px;
+}
+
+.project-count {
+    color: var(--accent-light);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin-top: 40px;
+}
+
+.project-card {
+    position: relative;
+
+    padding: 25px;
+
+    min-height: 360px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.04),
+            rgba(255,255,255,0.015)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 17px;
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s,
+        background 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(139, 92, 246, 0.55);
+
+    background: var(--card-hover);
+}
+
+.project-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.project-number {
+    color: var(--accent-light);
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+.project-category {
+    color: var(--muted);
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    text-align: right;
+}
+
+.project-card h3 {
+    font-size: 21px;
+
+    line-height: 1.25;
+
+    margin-top: 45px;
+}
+
+.project-card p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-top: 14px;
+}
+
+.technology-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 22px;
+}
+
+.technology-list span {
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    background: rgba(139, 92, 246, 0.10);
+
+    color: #c4b5fd;
+
+    font-size: 10px;
+}
+
+.project-link {
+    margin-top: auto;
+
+    padding-top: 25px;
+
+    color: var(--accent-light);
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.project-link span {
+    transition: 0.2s;
+}
+
+.project-link:hover span {
+    margin-left: 5px;
+}
+
+
+/* =========================================================
+   EXPERIENCE / CONTACT
+========================================================= */
+
+.simple-section {
+    padding: 100px 20px;
+
+    border-top: 1px solid var(--border);
+}
+
+.simple-section h2 {
+    margin-top: 10px;
+}
+
+.simple-section p:last-child {
+    color: var(--muted);
+
+    margin-top: 10px;
+}
+
+.contact-section {
+    padding: 100px 20px;
+}
+
+.contact-box {
+    padding: 60px 40px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(139, 92, 246, 0.12),
+            transparent 65%
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+}
+
+.contact-box p:not(.section-label) {
+    color: var(--muted);
+
+    max-width: 600px;
+
+    margin: 20px auto 30px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    border-top: 1px solid var(--border);
+
+    padding: 25px 20px;
+}
+
+.footer-container {
+    width: min(100%, var(--max-width));
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons,
+    .social-links {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        min-height: 420px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .nav-container {
+        width: min(100% - 28px, var(--max-width));
+
+        height: 65px;
+    }
+
+    .nav-menu {
+        top: 74px;
+
+        right: 14px;
+
+        left: 14px;
+
+        width: auto;
+    }
+
+    .hero {
+        padding:
+            110px 14px
+            60px;
+    }
+
+    .hero-container {
+        gap: 30px;
+    }
+
+    .hero-label {
+        font-size: 9px;
+
+        letter-spacing: 1.2px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+
+        letter-spacing: -1.7px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .social-links {
+        gap: 15px;
+
+        flex-wrap: wrap;
+    }
+
+    .hero-visual {
+        min-height: 360px;
+    }
+
+    .orbit-one {
+        width: 300px;
+        height: 300px;
+    }
+
+    .orbit-two {
+        width: 220px;
+        height: 220px;
+    }
+
+    .code-card {
+        width: 95%;
+
+        padding: 18px;
+    }
+
+    .code-content {
+        font-size: 10px;
+    }
+
+    .stats-card {
+        width: 280px;
+
+        bottom: 0;
+
+        right: 50%;
+
+        transform: translateX(50%);
+    }
+
+    .bridge-section {
+        padding: 20px 14px 70px;
+    }
+
+    .bridge-container {
+        grid-template-columns: 1fr;
+
+        padding: 25px;
+
+        gap: 18px;
+    }
+
+    .skills-section,
+    .projects-section,
+    .simple-section,
+    .contact-section {
+        padding-left: 14px;
+
+        padding-right: 14px;
+    }
+
+    .section-container {
+        width: 100%;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .project-card {
+        min-height: 330px;
+    }
+
+    .contact-box {
+        padding: 45px 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+
+        gap: 8px;
+
+        text-align: center;
+    }
+
+}
+
+/* =========================================================
+   PROJECT PAGE STYLES
+========================================================= */
+
+/* =========================================================
+   PROJECT PAGE
+========================================================= */
+
+.project-container {
+    width: min(100% - 40px, 1050px);
+    margin: auto;
+}
+
+
+/* PROJECT HERO */
+
+.project-hero {
+    padding:
+        140px 20px
+        90px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.back-link {
+    display: inline-block;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-bottom: 45px;
+
+    transition: 0.2s;
+}
+
+.back-link:hover {
+    color: var(--accent-light);
+}
+
+.project-label {
+    display: flex;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    color: var(--accent-light);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+}
+
+.project-hero h1 {
+    max-width: 850px;
+
+    font-size: clamp(45px, 7vw, 78px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-top: 25px;
+}
+
+.project-hero h1 span {
+    display: block;
+
+    color: var(--accent-light);
+}
+
+.project-intro {
+    max-width: 700px;
+
+    color: var(--muted);
+
+    font-size: 18px;
+
+    margin-top: 25px;
+}
+
+.project-tech {
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-top: 28px;
+}
+
+.project-tech span {
+    padding: 7px 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    color: #c4b5fd;
+
+    background: rgba(139, 92, 246, 0.08);
+
+    font-size: 11px;
+}
+
+
+/* CONTENT */
+
+.project-content {
+    padding: 90px 20px;
+}
+
+.project-section {
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 50px;
+
+    padding: 65px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.project-section-label {
+    color: var(--accent-light);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.project-section h2 {
+    font-size: clamp(28px, 4vw, 43px);
+
+    margin-bottom: 22px;
+}
+
+.project-section p {
+    max-width: 760px;
+
+    color: var(--muted);
+
+    margin-bottom: 14px;
+}
+
+
+/* PROCESS */
+
+.process-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.process-card {
+    padding: 23px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: var(--card);
+}
+
+.process-card span {
+    color: var(--accent-light);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.process-card h3 {
+    margin-top: 20px;
+
+    font-size: 17px;
+}
+
+.process-card p {
+    font-size: 13px;
+
+    margin-top: 8px;
+}
+
+
+/* TECHNOLOGY STACK */
+
+.stack-list {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+.stack-list div {
+    padding: 17px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--card);
+}
+
+.stack-list strong {
+    display: block;
+
+    color: white;
+}
+
+.stack-list span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-top: 4px;
+}
+
+
+/* FEATURES */
+
+.feature-list {
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.feature-list li {
+    position: relative;
+
+    padding: 15px 15px 15px 30px;
+
+    color: var(--muted);
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+}
+
+.feature-list li::before {
+    content: "→";
+
+    position: absolute;
+
+    left: 12px;
+
+    color: var(--accent-light);
+}
+
+
+/* RESULTS */
+
+.result-box {
+    display: inline-flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin-top: 20px;
+
+    padding: 18px 25px;
+
+    border: 1px solid rgba(139, 92, 246, 0.35);
+
+    border-radius: 10px;
+
+    background: rgba(139, 92, 246, 0.07);
+}
+
+.result-box strong {
+    color: var(--accent-light);
+
+    font-size: 13px;
+}
+
+.result-box span {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* SCREENSHOTS */
+
+.screenshots-placeholder {
+    min-height: 250px;
+
+    display: grid;
+
+    place-items: center;
+
+    border: 1px dashed rgba(139, 92, 246, 0.35);
+
+    border-radius: 14px;
+
+    background: rgba(139, 92, 246, 0.04);
+
+    color: var(--muted);
+
+    text-align: center;
+}
+
+
+/* ACTIONS */
+
+.project-actions {
+    display: flex;
+
+    gap: 12px;
+
+    padding-top: 55px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .project-container {
+        width: min(100% - 28px, 1050px);
+    }
+
+    .project-hero {
+        padding:
+            110px 14px
+            65px;
+    }
+
+    .project-hero h1 {
+        font-size: 44px;
+
+        letter-spacing: -1.8px;
+    }
+
+    .project-intro {
+        font-size: 15px;
+    }
+
+    .project-content {
+        padding: 50px 14px;
+    }
+
+    .project-section {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        padding: 45px 0;
+    }
+
+    .process-grid,
+    .stack-list,
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+
+    .project-actions {
+        flex-direction: column;
+    }
+
+    .project-actions .btn {
+        width: 100%;
+    }
+
+}
+
+/* =========================================================
+   SINGLE PAGE VIEW ROUTER HELPERS
+========================================================= */
+
+.page-view.hidden {
+    display: none !important;
+}
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            LYBA <span>NOOR</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+
+            <div class="nav-divider"></div>
+
+            <a href="https://drive.google.com/file/d/1kb1U2UmaBuKCUyMIINTzFuMDeWWyqvJg/view?usp=drive_link" class="resume-link">
+                ↓ &nbsp; Download Resume
+            </a>
+              
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- ================= HOME VIEW ================= -->
+<div id="view-home" class="page-view">
+    <main>
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <p class="hero-label">
+                PYTHON DEVELOPER • MACHINE LEARNING • DATA ANALYTICS
+            </p>
+
+            <h1>
+                Building practical solutions
+                with <span>technology & data.</span>
+            </h1>
+
+            <p class="hero-description">
+                I'm Lyba Noor, a Bioinformatics graduate with hands-on
+                experience building Python applications, machine learning
+                systems, data analytics solutions and database-driven software.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn btn-primary">
+                    View My Projects
+                    <span>→</span>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1kb1U2UmaBuKCUyMIINTzFuMDeWWyqvJg/view?usp=drive_link" class="btn btn-secondary">
+                    Download Resume
+                    <span>↓</span>
+                </a>
+
+            </div>
+
+            <div class="social-links">
+
+                <a href="https://github.com/lybanoor10" target="_blank">
+                    GitHub
+                </a>
+
+                <a href="https://www.linkedin.com/in/lybanoor10" target="_blank">
+                    LinkedIn
+                </a>
+
+                <a href="mailto:lybanoor10@gmail.com">
+                    Email
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO VISUAL -->
+
+        <div class="hero-visual">
+
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+
+            <div class="code-card">
+
+                <div class="code-header">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="code-content">
+
+                    <p>
+                        <span class="code-purple">developer</span>
+                        = {
+                    </p>
+
+                    <p class="indent">
+                        <span class="code-blue">"python"</span>:
+                        <span class="code-green">true</span>,
+                    </p>
+
+                    <p class="indent">
+                        <span class="code-blue">"machine_learning"</span>:
+                        <span class="code-green">true</span>,
+                    </p>
+
+                    <p class="indent">
+                        <span class="code-blue">"data"</span>:
+                        <span class="code-green">true</span>,
+                    </p>
+
+                    <p class="indent">
+                        <span class="code-blue">"problem_solving"</span>:
+                        <span class="code-green">true</span>
+                    </p>
+
+                    <p>
+                        };
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stats-card">
+
+                <div class="stat">
+                    <strong>05</strong>
+                    <span>Projects</span>
+                </div>
+
+                <div class="stat">
+                    <strong>02</strong>
+                    <span>Accepted Papers</span>
+                </div>
+
+                <div class="stat">
+                    <strong>Python</strong>
+                    <span>Development</span>
+                </div>
+
+                <div class="stat">
+                    <strong>ML & AI</strong>
+                    <span>Focus</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INTERDISCIPLINARY SECTION ================= -->
+
+<section class="bridge-section" id="about">
+
+    <div class="bridge-container">
+
+        <div class="bridge-icon">
+            &lt;/&gt;
+        </div>
+
+        <div class="bridge-content">
+
+            <p class="section-label">
+                ABOUT MY BACKGROUND
+            </p>
+
+            <h2>
+                Bridging Biology & Technology
+            </h2>
+
+            <p>
+                Bioinformatics is an interdisciplinary field that combines
+                biology, computer science and data analysis. My degree gave me
+                a strong foundation in computational thinking while keeping
+                me connected to life sciences.
+            </p>
+            
+            <p>
+                I chose this path because of its technical side. Today,
+                I apply that foundation to Python development, machine
+                learning, data analytics and software applications — allowing
+                me to work beyond traditional bioinformatics roles.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS PREVIEW ================= -->
+
+<section class="skills-section" id="skills">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="section-label">WHAT I WORK WITH</p>
+
+                <h2>
+                    Technical Skills
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <span class="skill-number">01</span>
+                <h3>Programming</h3>
+                <p>Python, C++, SQL, HTML, LaTeX</p>
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-number">02</span>
+                <h3>Machine Learning & AI</h3>
+                <p>Scikit-learn, TensorFlow, Keras, Pandas, NumPy</p>
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-number">03</span>
+                <h3>Application Development</h3>
+                <p>PyQt5, Streamlit, SQL Server, PyODBC</p>
+            </div>
+
+            <div class="skill-card">
+                <span class="skill-number">04</span>
+                <h3>Tools & Deployment</h3>
+                <p>Git, GitHub, Hugging Face Spaces, PyInstaller, Jupyter</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section class="projects-section" id="projects">
+
+    <div class="section-container">
+
+        <div class="projects-heading">
+
+            <div>
+
+                <p class="section-label">
+                    SELECTED WORK
+                </p>
+
+                <h2>
+                    Featured Projects
+                </h2>
+
+                <p class="section-description">
+                    A collection of AI, software and data projects
+                    demonstrating practical development experience.
+                </p>
+
+            </div>
+
+            <span class="project-count">
+                05 PROJECTS
+            </span>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 01 -->
+
+            <article class="project-card">
+
+                <div class="project-top">
+                    <span class="project-number">01</span>
+                    <span class="project-category">
+                        AI / DEEP LEARNING
+                    </span>
+                </div>
+
+                <h3>
+                    AI-Based Eye Disease Detection System
+                </h3>
+
+                <p>
+                    CNN-based deep learning system for multi-class
+                    eye disease classification from retinal images.
+                </p>
+
+                <div class="technology-list">
+                    <span>Python</span>
+                    <span>TensorFlow</span>
+                    <span>Keras</span>
+                    <span>Streamlit</span>
+                </div>
+
+                <a href="#eye-disease-detection" class="project-link">
+                    View Project <span>→</span>
+                </a>
+
+            </article>
+
+
+            <!-- PROJECT 02 -->
+
+            <article class="project-card">
+
+                <div class="project-top">
+                    <span class="project-number">02</span>
+                    <span class="project-category">
+                        MACHINE LEARNING
+                    </span>
+                </div>
+
+                <h3>
+                    Hospital Readmission Prediction System
+                </h3>
+
+                <p>
+                    Machine learning system for predicting hospital
+                    readmission risk from patient records.
+                </p>
+
+                <div class="technology-list">
+                    <span>Python</span>
+                    <span>Scikit-learn</span>
+                    <span>Streamlit</span>
+                    <span>Hugging Face</span>
+                </div>
+
+                <a href="#hospital-readmission" class="project-link">
+                    View Project <span>→</span>
+                </a>
+
+            </article>
+
+
+            <!-- PROJECT 03 -->
+
+            <article class="project-card">
+
+                <div class="project-top">
+                    <span class="project-number">03</span>
+                    <span class="project-category">
+                        MACHINE LEARNING
+                    </span>
+                </div>
+
+                <h3>
+                    Medical Billing Cost Prediction System
+                </h3>
+
+                <p>
+                    Predictive system using patient records to
+                    estimate annual medical costs.
+                </p>
+
+                <div class="technology-list">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>Scikit-learn</span>
+                    <span>Streamlit</span>
+                </div>
+
+                <a href="#medical-cost-prediction" class="project-link">
+                    View Project <span>→</span>
+                </a>
+
+            </article>
+
+
+            <!-- PROJECT 04 -->
+
+            <article class="project-card">
+
+                <div class="project-top">
+                    <span class="project-number">04</span>
+                    <span class="project-category">
+                        DESKTOP / DATABASE
+                    </span>
+                </div>
+
+                <h3>
+                    School Management System
+                </h3>
+
+                <p>
+                    Modular desktop application for students, teachers,
+                    attendance, fees, exams and salaries.
+                </p>
+
+                <div class="technology-list">
+                    <span>Python</span>
+                    <span>PyQt5</span>
+                    <span>SQL Server</span>
+                    <span>PyInstaller</span>
+                </div>
+
+                <a href="#school-management" class="project-link">
+                    View Project <span>→</span>
+                </a>
+
+            </article>
+
+
+            <!-- PROJECT 05 -->
+
+            <article class="project-card">
+
+                <div class="project-top">
+                    <span class="project-number">05</span>
+                    <span class="project-category">
+                        DATA ANALYTICS
+                    </span>
+                </div>
+
+                <h3>
+                    Web Scraping & Exploratory Data Analysis
+                </h3>
+
+                <p>
+                    Scraped structured product data and performed
+                    cleaning, EDA, sentiment analysis and visualization.
+                </p>
+
+                <div class="technology-list">
+                    <span>Python</span>
+                    <span>BeautifulSoup</span>
+                    <span>Pandas</span>
+                    <span>Matplotlib</span>
+                </div>
+
+                <a href="#web-scraping-analytics" class="project-link">
+                    View Project <span>→</span>
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE PLACEHOLDER ================= -->
+
+<section class="simple-section" id="experience">
+
+    <div class="section-container">
+
+        <p class="section-label">EXPERIENCE</p>
+
+        <h2>
+            Python Developer Intern
+        </h2>
+
+        <p>
+            Smart Algorithm (AI-SOFT) · March 2026 – June 2026
+        </p>
+        
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT PLACEHOLDER ================= -->
+
+<section class="contact-section" id="contact">
+
+    <div class="section-container contact-box">
+
+        <p class="section-label">
+            LET'S CONNECT
+        </p>
+
+        <h2>
+            Have a project or opportunity?
+        </h2>
+
+        <p>
+            I'm open to Python development, Machine Learning,
+            Data Analytics and software development opportunities.
+        </p>
+
+        <a href="https://mail.google.com/mail/?view=cm&to=lybanoor10@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary">
+         Get In Touch →
+        </a>
+
+    </div>
+    
+</section>
+    </main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <span>
+            © 2026 Lyba Noor
+        </span>
+        <p>Built and deployed as a Django-based personal portfolio to demonstrate practical web development and software engineering skills.</p>
+        <span>
+            Python • ML • Data
+        </span>
+
+    </div>
+
+</footer>
+</div>
+
+
+    <!-- ================= PROJECT VIEW: eye-disease-detection ================= -->
+    <div id="view-eye-disease-detection" class="page-view hidden" data-title="AI-Based Eye Disease Detection | Lyba Noor">
+        <main>
+<!-- ================= PROJECT HERO ================= -->
+
+<section class="project-hero">
+
+    <div class="project-container">
+
+        <a
+            href="#projects"
+            class="back-link"
+        >
+            ← Back to Projects
+        </a>
+
+
+        <div class="project-label">
+
+            <span>
+                PROJECT 01
+            </span>
+
+            <span>
+                AI / DEEP LEARNING
+            </span>
+
+        </div>
+
+
+        <h1>
+            AI-Based Eye Disease
+            <span>Detection System</span>
+        </h1>
+
+
+        <p class="project-intro">
+
+            A deep learning-based image classification system
+            designed to detect and classify eye diseases from
+            retinal images.
+
+        </p>
+
+
+        <div class="project-tech">
+
+            <span>Python</span>
+
+            <span>TensorFlow</span>
+
+            <span>Keras</span>
+
+            <span>CNN</span>
+
+            <span>Streamlit</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROJECT CONTENT ================= -->
+
+<section class="project-content">
+
+    <div class="project-container">
+
+
+        <!-- OVERVIEW -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                01 / OVERVIEW
+            </div>
+
+            <div>
+
+                <h2>
+                    Turning retinal images into
+                    meaningful predictions.
+                </h2>
+
+                <p>
+
+                    This project uses deep learning and computer
+                    vision techniques to classify retinal images
+                    into multiple eye disease categories.
+
+                </p>
+
+                <p>
+
+                    The system includes image preprocessing,
+                    augmentation, CNN-based feature learning and
+                    a Streamlit interface for interactive prediction.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROBLEM -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                02 / PROBLEM
+            </div>
+
+            <div>
+
+                <h2>
+                    The challenge
+                </h2>
+
+                <p>
+
+                    Manual analysis of medical images can be
+                    time-consuming and requires specialized
+                    expertise.
+
+                </p>
+
+                <p>
+
+                    The goal was to develop a machine learning
+                    pipeline capable of learning visual patterns
+                    from retinal images and providing an automated
+                    classification result.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- APPROACH -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                03 / APPROACH
+            </div>
+
+            <div>
+
+                <h2>
+                    How the system works
+                </h2>
+
+
+                <div class="process-grid">
+
+
+                    <div class="process-card">
+
+                        <span>01</span>
+
+                        <h3>
+                            Image Input
+                        </h3>
+
+                        <p>
+                            Retinal images are provided to
+                            the system.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>02</span>
+
+                        <h3>
+                            Preprocessing
+                        </h3>
+
+                        <p>
+                            Images are resized and prepared
+                            for model processing.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>03</span>
+
+                        <h3>
+                            CNN Model
+                        </h3>
+
+                        <p>
+                            The convolutional neural network
+                            learns visual features.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>04</span>
+
+                        <h3>
+                            Prediction
+                        </h3>
+
+                        <p>
+                            The trained model predicts the
+                            disease category.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TECHNOLOGIES -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                04 / TECHNOLOGIES
+            </div>
+
+            <div>
+
+                <h2>
+                    Technology stack
+                </h2>
+
+
+                <div class="stack-list">
+
+                    <div>
+                        <strong>Python</strong>
+                        <span>Programming</span>
+                    </div>
+
+                    <div>
+                        <strong>TensorFlow</strong>
+                        <span>Deep Learning</span>
+                    </div>
+
+                    <div>
+                        <strong>Keras</strong>
+                        <span>Neural Networks</span>
+                    </div>
+
+                    <div>
+                        <strong>Scikit-learn</strong>
+                        <span>ML Utilities</span>
+                    </div>
+
+                    <div>
+                        <strong>Pandas</strong>
+                        <span>Data Processing</span>
+                    </div>
+
+                    <div>
+                        <strong>Streamlit</strong>
+                        <span>Web Interface</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FEATURES -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                05 / FEATURES
+            </div>
+
+            <div>
+
+                <h2>
+                    Key features
+                </h2>
+
+
+                <ul class="feature-list">
+
+                    <li>
+                        Multi-class retinal image classification
+                    </li>
+
+                    <li>
+                        Image preprocessing and augmentation
+                    </li>
+
+                    <li>
+                        CNN-based deep learning pipeline
+                    </li>
+
+                    <li>
+                        Interactive Streamlit interface
+                    </li>
+
+                    <li>
+                        Image upload and prediction workflow
+                    </li>
+
+                    <li>
+                        Model-based automated classification
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RESULTS -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                06 / RESULTS
+            </div>
+
+            <div>
+
+                <h2>
+                    Results & deployment
+                </h2>
+
+                <p>
+
+                    The trained model was integrated into a
+                    Streamlit application so users could upload
+                    an image and receive a model prediction
+                    through an interactive interface.
+
+                </p>
+
+                <div class="result-box">
+
+                    <strong>
+                        Deployment
+                    </strong>
+
+                    <span>
+                        Streamlit application
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SCREENSHOTS -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                07 / VISUALS
+            </div>
+
+            <div>
+
+                <h2>
+                    Project screenshots
+                </h2>
+
+                <div class="screenshots-placeholder">
+
+                    <span>
+                        Project screenshots will be added here
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FUTURE LINKS -->
+
+        <div class="project-actions">
+
+            <a href="#" class="btn btn-primary">
+                GitHub →
+            </a>
+
+            <a href="#" class="btn btn-secondary">
+                Live Demo →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+        </main>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <span>
+            © 2026 Lyba Noor
+        </span>
+
+        <span>
+            AI • Python • Machine Learning
+        </span>
+
+    </div>
+
+</footer>
+    </div>
+
+    <!-- ================= PROJECT VIEW: hospital-readmission ================= -->
+    <div id="view-hospital-readmission" class="page-view hidden" data-title="Hospital Readmission Prediction | Lyba Noor">
+        <main>
+<!-- ================= PROJECT HERO ================= -->
+
+<section class="project-hero">
+
+    <div class="project-container">
+
+        <a
+            href="#projects"
+            class="back-link"
+        >
+            ← Back to Projects
+        </a>
+
+
+        <div class="project-label">
+
+            <span>PROJECT 02</span>
+
+            <span>MACHINE LEARNING / HEALTHCARE</span>
+
+        </div>
+
+
+        <h1>
+            Hospital Readmission
+            <span>Prediction System</span>
+        </h1>
+
+
+        <p class="project-intro">
+
+            A machine learning application designed to predict
+            the likelihood of patient hospital readmission using
+            healthcare data and predictive analytics.
+
+        </p>
+
+
+        <div class="project-tech">
+
+            <span>Python</span>
+            <span>Machine Learning</span>
+            <span>Scikit-learn</span>
+            <span>Pandas</span>
+            <span>Streamlit</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROJECT CONTENT ================= -->
+
+<section class="project-content">
+
+    <div class="project-container">
+
+
+        <!-- OVERVIEW -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                01 / OVERVIEW
+            </div>
+
+            <div>
+
+                <h2>
+                    Predicting patient readmission
+                    using machine learning.
+                </h2>
+
+                <p>
+
+                    This project focuses on predicting whether a
+                    patient is likely to be readmitted to a hospital
+                    based on available healthcare and patient data.
+
+                </p>
+
+                <p>
+
+                    Machine learning models were used to identify
+                    patterns within the dataset and generate
+                    predictions through an interactive web
+                    application.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROBLEM -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                02 / PROBLEM
+            </div>
+
+            <div>
+
+                <h2>
+                    The challenge
+                </h2>
+
+                <p>
+
+                    Hospital readmissions can create additional
+                    pressure on healthcare systems and may indicate
+                    the need for better patient monitoring and
+                    follow-up planning.
+
+                </p>
+
+                <p>
+
+                    The goal of this project was to build a
+                    predictive system capable of analyzing patient
+                    data and estimating the likelihood of
+                    readmission.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- APPROACH -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                03 / APPROACH
+            </div>
+
+            <div>
+
+                <h2>
+                    How the system works
+                </h2>
+
+
+                <div class="process-grid">
+
+
+                    <div class="process-card">
+
+                        <span>01</span>
+
+                        <h3>
+                            Data Input
+                        </h3>
+
+                        <p>
+                            Patient and healthcare-related
+                            information is provided to the system.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>02</span>
+
+                        <h3>
+                            Data Processing
+                        </h3>
+
+                        <p>
+                            The input data is prepared and
+                            transformed for machine learning.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>03</span>
+
+                        <h3>
+                            ML Model
+                        </h3>
+
+                        <p>
+                            A trained machine learning model
+                            analyzes patterns in the data.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>04</span>
+
+                        <h3>
+                            Prediction
+                        </h3>
+
+                        <p>
+                            The system provides a prediction
+                            related to patient readmission risk.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TECHNOLOGIES -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                04 / TECHNOLOGIES
+            </div>
+
+            <div>
+
+                <h2>
+                    Technology stack
+                </h2>
+
+
+                <div class="stack-list">
+
+                    <div>
+                        <strong>Python</strong>
+                        <span>Programming</span>
+                    </div>
+
+                    <div>
+                        <strong>Scikit-learn</strong>
+                        <span>Machine Learning</span>
+                    </div>
+
+                    <div>
+                        <strong>Pandas</strong>
+                        <span>Data Processing</span>
+                    </div>
+
+                    <div>
+                        <strong>NumPy</strong>
+                        <span>Numerical Computing</span>
+                    </div>
+
+                    <div>
+                        <strong>Streamlit</strong>
+                        <span>Interactive Web Application</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FEATURES -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                05 / FEATURES
+            </div>
+
+            <div>
+
+                <h2>
+                    Key features
+                </h2>
+
+
+                <ul class="feature-list">
+
+                    <li>
+                        Healthcare data preprocessing
+                    </li>
+
+                    <li>
+                        Machine learning-based prediction
+                    </li>
+
+                    <li>
+                        Patient data input workflow
+                    </li>
+
+                    <li>
+                        Readmission risk estimation
+                    </li>
+
+                    <li>
+                        Interactive Streamlit interface
+                    </li>
+
+                    <li>
+                        User-friendly prediction results
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RESULTS -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                06 / RESULTS
+            </div>
+
+            <div>
+
+                <h2>
+                    Results & deployment
+                </h2>
+
+                <p>
+
+                    The trained prediction workflow was integrated
+                    into an interactive Streamlit application,
+                    allowing users to provide relevant information
+                    and receive a machine learning-based prediction.
+
+                </p>
+
+                <div class="result-box">
+
+                    <strong>
+                        Application
+                    </strong>
+
+                    <span>
+                        Interactive ML prediction system
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SCREENSHOTS -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                07 / VISUALS
+            </div>
+
+            <div>
+
+                <h2>
+                    Project screenshots
+                </h2>
+
+                <div class="screenshots-placeholder">
+
+                    <span>
+                        Project screenshots will be added here
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FUTURE LINKS -->
+
+        <div class="project-actions">
+
+            <a href="#" class="btn btn-primary">
+                GitHub →
+            </a>
+
+            <a href="#" class="btn btn-secondary">
+                Live Demo →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+        </main>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <span>
+            © 2026 Lyba Noor
+        </span>
+
+        <span>
+            AI • Python • Machine Learning
+        </span>
+
+    </div>
+
+</footer>
+    </div>
+
+    <!-- ================= PROJECT VIEW: medical-cost-prediction ================= -->
+    <div id="view-medical-cost-prediction" class="page-view hidden" data-title="AI Medical Cost Prediction | Lyba Noor">
+        <main>
+<!-- ================= PROJECT HERO ================= -->
+
+<section class="project-hero">
+
+    <div class="project-container">
+
+        <a
+            href="#projects"
+            class="back-link"
+        >
+            ← Back to Projects
+        </a>
+
+
+        <div class="project-label">
+
+            <span>
+                PROJECT 03
+            </span>
+
+            <span>
+                MACHINE LEARNING / HEALTHCARE
+            </span>
+
+        </div>
+
+
+        <h1>
+
+            AI Medical Cost
+            <span>Prediction System</span>
+
+        </h1>
+
+
+        <p class="project-intro">
+
+            A machine learning web application that estimates
+            medical insurance expenses from patient-related
+            information through an interactive prediction interface.
+
+        </p>
+
+
+        <div class="project-tech">
+
+            <span>Python</span>
+
+            <span>Scikit-learn</span>
+
+            <span>Pandas</span>
+
+            <span>Joblib</span>
+
+            <span>Streamlit</span>
+
+            <span>Docker</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROJECT CONTENT ================= -->
+
+<section class="project-content">
+
+    <div class="project-container">
+
+
+        <!-- OVERVIEW -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                01 / OVERVIEW
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Predicting estimated medical
+                    expenses from patient data.
+                </h2>
+
+
+                <p>
+
+                    This project is a machine learning-based
+                    web application for predicting medical
+                    insurance costs.
+
+                </p>
+
+
+                <p>
+
+                    The application collects selected
+                    patient characteristics and passes them
+                    through a trained machine learning model
+                    to generate an estimated medical expense.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROBLEM -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                02 / PROBLEM
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Turning patient information
+                    into cost estimates.
+                </h2>
+
+
+                <p>
+
+                    Medical expenses can vary significantly
+                    depending on individual characteristics
+                    and lifestyle-related factors.
+
+                </p>
+
+
+                <p>
+
+                    The objective of this project was to build
+                    a predictive system that could estimate
+                    medical costs from structured patient data.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- INPUT -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                03 / INPUT DATA
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Patient information used by
+                    the prediction model.
+                </h2>
+
+
+                <div class="process-grid">
+
+
+                    <div class="process-card">
+
+                        <span>01</span>
+
+                        <h3>
+                            Age
+                        </h3>
+
+                        <p>
+                            Patient age between 18 and 100.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>02</span>
+
+                        <h3>
+                            BMI
+                        </h3>
+
+                        <p>
+                            Body Mass Index used as a
+                            numerical model feature.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>03</span>
+
+                        <h3>
+                            Family Information
+                        </h3>
+
+                        <p>
+                            Number of children is included
+                            as a model input.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>04</span>
+
+                        <h3>
+                            Lifestyle & Region
+                        </h3>
+
+                        <p>
+                            Sex, smoking status and region
+                            are included as categorical inputs.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- WORKFLOW -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                04 / WORKFLOW
+            </div>
+
+
+            <div>
+
+                <h2>
+                    From user input to prediction.
+                </h2>
+
+
+                <div class="process-grid">
+
+
+                    <div class="process-card">
+
+                        <span>01</span>
+
+                        <h3>
+                            User Input
+                        </h3>
+
+                        <p>
+                            Patient information is entered
+                            through the Streamlit interface.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>02</span>
+
+                        <h3>
+                            Feature Preparation
+                        </h3>
+
+                        <p>
+                            Input values are converted into
+                            the feature structure expected
+                            by the trained model.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>03</span>
+
+                        <h3>
+                            Model Prediction
+                        </h3>
+
+                        <p>
+                            The saved machine learning model
+                            generates the estimated cost.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>04</span>
+
+                        <h3>
+                            Cost Estimate
+                        </h3>
+
+                        <p>
+                            The predicted medical expense is
+                            displayed to the user.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TECHNOLOGIES -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                05 / TECHNOLOGIES
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Technology stack
+                </h2>
+
+
+                <div class="stack-list">
+
+
+                    <div>
+
+                        <strong>
+                            Python
+                        </strong>
+
+                        <span>
+                            Programming
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Scikit-learn
+                        </strong>
+
+                        <span>
+                            Machine Learning
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Pandas
+                        </strong>
+
+                        <span>
+                            Data Processing
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Joblib
+                        </strong>
+
+                        <span>
+                            Model Loading
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Streamlit
+                        </strong>
+
+                        <span>
+                            Web Application
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Docker
+                        </strong>
+
+                        <span>
+                            Deployment
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FEATURES -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                06 / FEATURES
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Key features
+                </h2>
+
+
+                <ul class="feature-list">
+
+                    <li>
+                        Medical insurance cost prediction
+                    </li>
+
+                    <li>
+                        Interactive patient input interface
+                    </li>
+
+                    <li>
+                        Age and BMI-based prediction inputs
+                    </li>
+
+                    <li>
+                        Smoking status and regional information
+                    </li>
+
+                    <li>
+                        Saved machine learning model
+                    </li>
+
+                    <li>
+                        Automatic estimated cost output
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MODEL RESULTS -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                07 / MODEL RESULTS
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Model comparison
+                </h2>
+
+
+                <p>
+
+                    Multiple machine learning models were
+                    evaluated as part of the project.
+
+                </p>
+
+
+                <div class="stack-list">
+
+
+                    <div>
+
+                        <strong>
+                            KNN
+                        </strong>
+
+                        <span>
+                            Accuracy: 97.06%
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Random Forest
+                        </strong>
+
+                        <span>
+                            Accuracy: 96.13%
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Decision Tree
+                        </strong>
+
+                        <span>
+                            Accuracy: 87.63%
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            SVM
+                        </strong>
+
+                        <span>
+                            Accuracy: 74.44%
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Naive Bayes
+                        </strong>
+
+                        <span>
+                            Accuracy: 69.75%
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Logistic Regression
+                        </strong>
+
+                        <span>
+                            Accuracy: 45.44%
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DEPLOYMENT -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                08 / DEPLOYMENT
+            </div>
+
+
+            <div>
+
+                <h2>
+                    From machine learning model
+                    to web application.
+                </h2>
+
+
+                <p>
+
+                    The trained model is loaded using Joblib
+                    and integrated into a Streamlit application.
+
+                </p>
+
+
+                <p>
+
+                    The project includes Docker configuration
+                    for deployment as a containerized
+                    Streamlit application.
+
+                </p>
+
+
+                <div class="result-box">
+
+                    <strong>
+                        Deployment
+                    </strong>
+
+                    <span>
+                        Streamlit + Docker
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- VISUALS -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                09 / VISUALS
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Project screenshots
+                </h2>
+
+
+                <div class="screenshots-placeholder">
+
+                    <span>
+                        Medical Cost Prediction
+                        application screenshots
+                        will be added here
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ACTIONS -->
+
+        <div class="project-actions">
+
+            <a
+                href="#"
+                class="btn btn-primary"
+            >
+                GitHub →
+            </a>
+
+
+            <a
+                href="https://huggingface.co/spaces/lybanoor10/medical-billing"
+                class="btn btn-secondary"
+            >
+                Live Demo →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+        </main>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <span>
+            © 2026 Lyba Noor
+        </span>
+
+        <span>
+            AI • Python • Machine Learning
+        </span>
+
+    </div>
+
+</footer>
+    </div>
+
+    <!-- ================= PROJECT VIEW: school-management ================= -->
+    <div id="view-school-management" class="page-view hidden" data-title="School Management System | Lyba Noor">
+        <main>
+<!-- ================= PROJECT HERO ================= -->
+
+<section class="project-hero">
+
+    <div class="project-container">
+
+        <a
+            href="#projects"
+            class="back-link"
+        >
+            ← Back to Projects
+        </a>
+
+
+        <div class="project-label">
+
+            <span>
+                PROJECT 04
+            </span>
+
+            <span>
+                DESKTOP APPLICATION / DATABASE SYSTEM
+            </span>
+
+        </div>
+
+
+        <h1>
+
+            School Management
+            <span>System</span>
+
+        </h1>
+
+
+        <p class="project-intro">
+
+            A desktop-based school management application
+            designed to centralize student, teacher, attendance,
+            fee and examination management through a
+            SQL Server-backed system.
+
+        </p>
+
+
+        <div class="project-tech">
+
+            <span>Python</span>
+
+            <span>PyQt5</span>
+
+            <span>SQL Server</span>
+
+            <span>pyodbc</span>
+
+            <span>ReportLab</span>
+
+            <span>openpyxl</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROJECT CONTENT ================= -->
+
+<section class="project-content">
+
+    <div class="project-container">
+
+
+        <!-- OVERVIEW -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                01 / OVERVIEW
+            </div>
+
+
+            <div>
+
+                <h2>
+                    A centralized system for
+                    school administration.
+                </h2>
+
+
+                <p>
+
+                    The School Management System is a
+                    desktop application developed with
+                    Python and PyQt5.
+
+                </p>
+
+
+                <p>
+
+                    It connects a graphical user interface
+                    with a SQL Server database to manage
+                    important academic and administrative
+                    information from a centralized application.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROBLEM -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                02 / PROBLEM
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Managing school operations
+                    in one place.
+                </h2>
+
+
+                <p>
+
+                    Schools need to maintain information
+                    about students, teachers, classes,
+                    attendance, fees and examinations.
+
+                </p>
+
+
+                <p>
+
+                    The goal of this project was to create
+                    a structured desktop system where these
+                    operations could be managed through
+                    dedicated modules connected to a
+                    relational database.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SYSTEM WORKFLOW -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                03 / SYSTEM WORKFLOW
+            </div>
+
+
+            <div>
+
+                <h2>
+                    From authentication to
+                    school management.
+                </h2>
+
+
+                <div class="process-grid">
+
+
+                    <div class="process-card">
+
+                        <span>01</span>
+
+                        <h3>
+                            Login
+                        </h3>
+
+                        <p>
+                            Users access the application
+                            through the authentication screen.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>02</span>
+
+                        <h3>
+                            Dashboard
+                        </h3>
+
+                        <p>
+                            The dashboard provides access
+                            to the main management modules.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>03</span>
+
+                        <h3>
+                            Management Modules
+                        </h3>
+
+                        <p>
+                            Student, teacher, attendance,
+                            fee and examination data can
+                            be managed through dedicated
+                            interfaces.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>04</span>
+
+                        <h3>
+                            Reports
+                        </h3>
+
+                        <p>
+                            Structured reports can be
+                            generated from the stored data.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MODULES -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                04 / MODULES
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Core management modules
+                </h2>
+
+
+                <div class="stack-list">
+
+
+                    <div>
+
+                        <strong>
+                            Student Management
+                        </strong>
+
+                        <span>
+                            Student records and class information
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Teacher Management
+                        </strong>
+
+                        <span>
+                            Teacher records and salary information
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Attendance
+                        </strong>
+
+                        <span>
+                            Student attendance records
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Fees
+                        </strong>
+
+                        <span>
+                            Monthly fee records and payment status
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Examinations
+                        </strong>
+
+                        <span>
+                            Marks, grades and examination records
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Reports
+                        </strong>
+
+                        <span>
+                            PDF and Excel reporting functionality
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DATABASE -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                05 / DATABASE
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Relational database architecture
+                </h2>
+
+
+                <p>
+
+                    The application uses Microsoft SQL Server
+                    as its database system and connects to it
+                    from Python through pyodbc.
+
+                </p>
+
+
+                <p>
+
+                    The database contains structured records
+                    for students, classes, attendance, exams,
+                    fees, teachers and salary information.
+
+                </p>
+
+
+                <div class="process-grid">
+
+
+                    <div class="process-card">
+
+                        <span>01</span>
+
+                        <h3>
+                            Students
+                        </h3>
+
+                        <p>
+                            Student personal and academic
+                            information.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>02</span>
+
+                        <h3>
+                            Classes
+                        </h3>
+
+                        <p>
+                            Class and section information
+                            linked to students.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>03</span>
+
+                        <h3>
+                            Attendance
+                        </h3>
+
+                        <p>
+                            Date-based attendance records
+                            linked to students.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>04</span>
+
+                        <h3>
+                            Fees & Exams
+                        </h3>
+
+                        <p>
+                            Payment, marks and grade records
+                            linked to students.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FEATURES -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                06 / FEATURES
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Key features
+                </h2>
+
+
+                <ul class="feature-list">
+
+                    <li>
+                        PyQt5 desktop graphical interface
+                    </li>
+
+                    <li>
+                        SQL Server database integration
+                    </li>
+
+                    <li>
+                        Student CRUD operations
+                    </li>
+
+                    <li>
+                        Teacher management
+                    </li>
+
+                    <li>
+                        Attendance management
+                    </li>
+
+                    <li>
+                        Monthly fee management
+                    </li>
+
+                    <li>
+                        Examination and grade records
+                    </li>
+
+                    <li>
+                        PDF report generation
+                    </li>
+
+                    <li>
+                        Excel export functionality
+                    </li>
+
+                    <li>
+                        Login and dashboard workflow
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- REPORTING -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                07 / REPORTING
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Data into usable reports.
+                </h2>
+
+
+                <p>
+
+                    The system includes reporting functionality
+                    for transforming stored school information
+                    into useful PDF and Excel outputs.
+
+                </p>
+
+
+                <div class="stack-list">
+
+
+                    <div>
+
+                        <strong>
+                            ReportLab
+                        </strong>
+
+                        <span>
+                            PDF report generation
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            openpyxl
+                        </strong>
+
+                        <span>
+                            Excel export
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TECHNOLOGIES -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                08 / TECHNOLOGIES
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Technology stack
+                </h2>
+
+
+                <div class="stack-list">
+
+
+                    <div>
+
+                        <strong>
+                            Python 3.10
+                        </strong>
+
+                        <span>
+                            Application development
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            PyQt5
+                        </strong>
+
+                        <span>
+                            Desktop GUI
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            SQL Server
+                        </strong>
+
+                        <span>
+                            Relational database
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            pyodbc
+                        </strong>
+
+                        <span>
+                            Python database connectivity
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            ReportLab
+                        </strong>
+
+                        <span>
+                            PDF generation
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            openpyxl
+                        </strong>
+
+                        <span>
+                            Excel export
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DEPLOYMENT -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                09 / DEPLOYMENT
+            </div>
+
+
+            <div>
+
+                <h2>
+                    From development environment
+                    to desktop application.
+                </h2>
+
+
+                <p>
+
+                    The application was packaged into an
+                    executable using PyInstaller and tested
+                    as a standalone desktop application.
+
+                </p>
+
+
+                <p>
+
+                    An installer workflow using Inno Setup
+                    was also prepared for distributing the
+                    application to a user's Windows system.
+
+                </p>
+
+
+                <div class="result-box">
+
+                    <strong>
+                        Application
+                    </strong>
+
+                    <span>
+                        Windows desktop executable
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- VISUALS -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                10 / VISUALS
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Project screenshots
+                </h2>
+
+
+                <div class="screenshots-placeholder">
+
+                    <span>
+                        School Management System
+                        screenshots will be added here
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ACTIONS -->
+
+        <div class="project-actions">
+
+            <a
+                href="#"
+                class="btn btn-primary"
+            >
+                GitHub →
+            </a>
+
+
+            <a
+                href="#"
+                class="btn btn-secondary"
+            >
+                Download / Demo →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+        </main>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <span>
+            © 2026 Lyba Noor
+        </span>
+
+        <span>
+            AI • Python • Software Development
+        </span>
+
+    </div>
+
+</footer>
+    </div>
+
+    <!-- ================= PROJECT VIEW: web-scraping-analytics ================= -->
+    <div id="view-web-scraping-analytics" class="page-view hidden" data-title="Web Scraping & Data Analytics | Lyba Noor">
+        <main>
+<!-- ================= PROJECT HERO ================= -->
+
+<section class="project-hero">
+
+    <div class="project-container">
+
+
+        <a
+            href="#projects"
+            class="back-link"
+        >
+            ← Back to Projects
+        </a>
+
+
+        <div class="project-label">
+
+            <span>
+                PROJECT 05
+            </span>
+
+            <span>
+                WEB SCRAPING / DATA ANALYTICS
+            </span>
+
+        </div>
+
+
+        <h1>
+
+            Web Scraping &
+            <span>Data Analytics</span>
+
+        </h1>
+
+
+        <p class="project-intro">
+
+            A complete data analytics workflow that collects
+            book information from a multi-page website,
+            cleans and analyzes the dataset, creates
+            visualizations, and applies sentiment analysis
+            to book titles.
+
+        </p>
+
+
+        <div class="project-tech">
+
+            <span>Python</span>
+
+            <span>Requests</span>
+
+            <span>BeautifulSoup</span>
+
+            <span>Pandas</span>
+
+            <span>Matplotlib</span>
+
+            <span>Seaborn</span>
+
+            <span>TextBlob</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROJECT CONTENT ================= -->
+
+<section class="project-content">
+
+    <div class="project-container">
+
+
+        <!-- OVERVIEW -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                01 / OVERVIEW
+            </div>
+
+
+            <div>
+
+                <h2>
+                    From website data to
+                    analytical insights.
+                </h2>
+
+
+                <p>
+
+                    This project demonstrates a complete
+                    data workflow starting with web scraping
+                    and ending with exploratory analysis,
+                    visualization and sentiment analysis.
+
+                </p>
+
+
+                <p>
+
+                    Book information was collected from the
+                    Books to Scrape website and transformed
+                    into structured datasets for further
+                    analysis.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SCRAPING -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                02 / WEB SCRAPING
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Collecting structured information
+                    from multiple web pages.
+                </h2>
+
+
+                <p>
+
+                    Python Requests was used to retrieve
+                    web pages, while BeautifulSoup was used
+                    to parse the HTML and extract book
+                    information.
+
+                </p>
+
+
+                <div class="process-grid">
+
+
+                    <div class="process-card">
+
+                        <span>01</span>
+
+                        <h3>
+                            Page Request
+                        </h3>
+
+                        <p>
+                            Website pages are requested
+                            using Python Requests.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>02</span>
+
+                        <h3>
+                            HTML Parsing
+                        </h3>
+
+                        <p>
+                            BeautifulSoup parses the
+                            returned HTML content.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>03</span>
+
+                        <h3>
+                            Data Extraction
+                        </h3>
+
+                        <p>
+                            Book titles, prices,
+                            availability and ratings
+                            are extracted.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>04</span>
+
+                        <h3>
+                            CSV Dataset
+                        </h3>
+
+                        <p>
+                            The collected information
+                            is stored as structured CSV data.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DATASET -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                03 / DATASET
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Building a structured book dataset.
+                </h2>
+
+
+                <p>
+
+                    The multi-page scraping script processes
+                    pages 1 through 50 and stores the extracted
+                    information in a Pandas DataFrame.
+
+                </p>
+
+
+                <div class="stack-list">
+
+
+                    <div>
+
+                        <strong>
+                            Title
+                        </strong>
+
+                        <span>
+                            Book title
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Price
+                        </strong>
+
+                        <span>
+                            Book price
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Availability
+                        </strong>
+
+                        <span>
+                            Stock availability information
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Rating
+                        </strong>
+
+                        <span>
+                            Book rating
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CLEANING -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                04 / DATA CLEANING
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Preparing raw data for analysis.
+                </h2>
+
+
+                <p>
+
+                    The raw scraped dataset is cleaned and
+                    transformed using Pandas before performing
+                    exploratory analysis.
+
+                </p>
+
+
+                <ul class="feature-list">
+
+                    <li>
+                        Checked dataset information
+                    </li>
+
+                    <li>
+                        Checked missing values
+                    </li>
+
+                    <li>
+                        Checked duplicate records
+                    </li>
+
+                    <li>
+                        Converted price values to numeric format
+                    </li>
+
+                    <li>
+                        Converted rating values from words to numbers
+                    </li>
+
+                    <li>
+                        Created price categories
+                    </li>
+
+                    <li>
+                        Saved the cleaned dataset as CSV
+                    </li>
+
+                </ul>
+
+
+                <div class="result-box">
+
+                    <strong>
+                        Output
+                    </strong>
+
+                    <span>
+                        clean_books.csv
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- EDA -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                05 / EXPLORATORY DATA ANALYSIS
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Exploring prices, ratings
+                    and relationships.
+                </h2>
+
+
+                <p>
+
+                    Exploratory Data Analysis was performed
+                    using Pandas, Matplotlib and Seaborn
+                    to understand patterns in the scraped
+                    book dataset.
+
+                </p>
+
+
+                <div class="process-grid">
+
+
+                    <div class="process-card">
+
+                        <span>01</span>
+
+                        <h3>
+                            Price Analysis
+                        </h3>
+
+                        <p>
+                            Average, minimum and maximum
+                            book prices were calculated.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>02</span>
+
+                        <h3>
+                            Rating Analysis
+                        </h3>
+
+                        <p>
+                            Book counts and distributions
+                            were examined by rating.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>03</span>
+
+                        <h3>
+                            Relationship Analysis
+                        </h3>
+
+                        <p>
+                            Price and rating relationships
+                            were explored.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>04</span>
+
+                        <h3>
+                            Top Books
+                        </h3>
+
+                        <p>
+                            The ten most expensive books
+                            were identified.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- VISUALIZATION -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                06 / VISUALIZATION
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Turning analysis into visual insights.
+                </h2>
+
+
+                <p>
+
+                    Multiple charts were created to understand
+                    the distribution of prices and ratings and
+                    their relationship.
+
+                </p>
+
+
+                <div class="stack-list">
+
+
+                    <div>
+
+                        <strong>
+                            Rating Distribution
+                        </strong>
+
+                        <span>
+                            Distribution of books by rating
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Price Distribution
+                        </strong>
+
+                        <span>
+                            Distribution of book prices
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Price Boxplot
+                        </strong>
+
+                        <span>
+                            Price spread and potential outliers
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Average Price by Rating
+                        </strong>
+
+                        <span>
+                            Average price comparison
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Correlation Heatmap
+                        </strong>
+
+                        <span>
+                            Numeric relationship analysis
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Top 10 Expensive Books
+                        </strong>
+
+                        <span>
+                            Highest-priced books
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SENTIMENT -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                07 / SENTIMENT ANALYSIS
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Applying NLP to book titles.
+                </h2>
+
+
+                <p>
+
+                    TextBlob was used to calculate the
+                    sentiment polarity of book titles and
+                    classify them as Positive, Negative
+                    or Neutral.
+
+                </p>
+
+
+                <div class="process-grid">
+
+
+                    <div class="process-card">
+
+                        <span>01</span>
+
+                        <h3>
+                            Text Input
+                        </h3>
+
+                        <p>
+                            Book titles are used as the
+                            text analysis input.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>02</span>
+
+                        <h3>
+                            Polarity
+                        </h3>
+
+                        <p>
+                            TextBlob calculates sentiment
+                            polarity.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>03</span>
+
+                        <h3>
+                            Classification
+                        </h3>
+
+                        <p>
+                            Titles are classified into
+                            positive, negative or neutral.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>04</span>
+
+                        <h3>
+                            Visualization
+                        </h3>
+
+                        <p>
+                            Sentiment distributions are
+                            visualized for analysis.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <strong>
+                        Output
+                    </strong>
+
+                    <span>
+                        books_with_sentiment.csv
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DATA PIPELINE -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                08 / DATA PIPELINE
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Complete workflow.
+                </h2>
+
+
+                <div class="process-grid">
+
+
+                    <div class="process-card">
+
+                        <span>01</span>
+
+                        <h3>
+                            Scrape
+                        </h3>
+
+                        <p>
+                            Collect raw information
+                            from web pages.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>02</span>
+
+                        <h3>
+                            Clean
+                        </h3>
+
+                        <p>
+                            Transform and prepare
+                            the dataset.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>03</span>
+
+                        <h3>
+                            Analyze
+                        </h3>
+
+                        <p>
+                            Perform statistical and
+                            exploratory analysis.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>04</span>
+
+                        <h3>
+                            Visualize
+                        </h3>
+
+                        <p>
+                            Present patterns through
+                            analytical charts.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>05</span>
+
+                        <h3>
+                            NLP
+                        </h3>
+
+                        <p>
+                            Apply sentiment analysis
+                            to book titles.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-card">
+
+                        <span>06</span>
+
+                        <h3>
+                            Export
+                        </h3>
+
+                        <p>
+                            Save processed datasets
+                            for further use.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TECHNOLOGIES -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                09 / TECHNOLOGIES
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Technology stack
+                </h2>
+
+
+                <div class="stack-list">
+
+
+                    <div>
+
+                        <strong>
+                            Python
+                        </strong>
+
+                        <span>
+                            Core development
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Requests
+                        </strong>
+
+                        <span>
+                            HTTP requests
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            BeautifulSoup
+                        </strong>
+
+                        <span>
+                            HTML parsing and scraping
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Pandas
+                        </strong>
+
+                        <span>
+                            Data manipulation and analysis
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Matplotlib
+                        </strong>
+
+                        <span>
+                            Data visualization
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Seaborn
+                        </strong>
+
+                        <span>
+                            Statistical visualization
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            TextBlob
+                        </strong>
+
+                        <span>
+                            Sentiment analysis
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- OUTPUTS -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                10 / OUTPUTS
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Project outputs.
+                </h2>
+
+
+                <div class="stack-list">
+
+
+                    <div>
+
+                        <strong>
+                            books.csv
+                        </strong>
+
+                        <span>
+                            Initial scraped book dataset
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            all_books.csv
+                        </strong>
+
+                        <span>
+                            Multi-page scraped dataset
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            clean_books.csv
+                        </strong>
+
+                        <span>
+                            Cleaned and transformed dataset
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            books_with_sentiment.csv
+                        </strong>
+
+                        <span>
+                            Dataset with sentiment classification
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- VISUALS -->
+
+        <div class="project-section">
+
+            <div class="project-section-label">
+                11 / VISUALS
+            </div>
+
+
+            <div>
+
+                <h2>
+                    Project visualizations.
+                </h2>
+
+
+                <div class="screenshots-placeholder">
+
+                    <span>
+                        EDA charts and sentiment
+                        analysis visualizations
+                        will be added here
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ACTIONS -->
+
+        <div class="project-actions">
+
+            <a
+                href="https://github.com/lybanoor10/codealpha_tasks.git"
+                class="btn btn-primary"
+            >
+                GitHub →
+            </a>
+
+
+            <a
+                href="#"
+                class="btn btn-secondary"
+            >
+                View Analysis →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+        </main>
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <span>
+            © 2026 Lyba Noor
+        </span>
+
+        <span>
+            Python • Data Analytics • Web Scraping
+        </span>
+
+    </div>
+
+</footer>
+    </div>
+
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});
+
+
+document.querySelectorAll("#navMenu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+    });
+
+});
+
+// =========================================================
+// SINGLE PAGE VIEW ROUTER & NAVIGATION
+// =========================================================
+
+const HOME_TITLE = "Lyba Noor | Python Developer | ML & Data Analytics";
+const projectSlugs = [
+    "eye-disease-detection",
+    "hospital-readmission",
+    "medical-cost-prediction",
+    "school-management",
+    "web-scraping-analytics"
+];
+
+function handleRoute() {
+    const rawHash = window.location.hash.replace(/^#/, "").trim();
+    const homeView = document.getElementById("view-home");
+    const projectViews = document.querySelectorAll(".page-view:not(#view-home)");
+
+    if (projectSlugs.includes(rawHash)) {
+        // Show specific project view
+        homeView.classList.add("hidden");
+        projectViews.forEach(v => {
+            if (v.id === `view-${rawHash}`) {
+                v.classList.remove("hidden");
+                const pageTitle = v.getAttribute("data-title");
+                if (pageTitle) document.title = pageTitle;
+            } else {
+                v.classList.add("hidden");
+            }
+        });
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+        // Show home view
+        projectViews.forEach(v => v.classList.add("hidden"));
+        homeView.classList.remove("hidden");
+        document.title = HOME_TITLE;
+
+        // If hash refers to a home section, scroll to it
+        if (rawHash) {
+            const targetEl = document.getElementById(rawHash);
+            if (targetEl) {
+                targetEl.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+    }
+}
+
+window.addEventListener("hashchange", handleRoute);
+window.addEventListener("DOMContentLoaded", handleRoute);
+
+// Intercept clicks on links that go back to home sections
+document.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
+
+    const href = link.getAttribute("href");
+    if (!href) return;
+
+    // If clicking on a project link or anchor
+    if (href.startsWith("#")) {
+        const targetSlug = href.substring(1);
+        if (projectSlugs.includes(targetSlug)) {
+            // Let hashchange trigger or trigger manually
+            if (window.location.hash === href) {
+                handleRoute();
+            }
+        } else {
+            // Section on home (e.g. #projects, #about, #skills, #contact, #home)
+            const homeView = document.getElementById("view-home");
+            if (homeView && homeView.classList.contains("hidden")) {
+                homeView.classList.remove("hidden");
+                document.querySelectorAll(".page-view:not(#view-home)").forEach(v => v.classList.add("hidden"));
+                document.title = HOME_TITLE;
+                if (targetSlug) {
+                    setTimeout(() => {
+                        const targetEl = document.getElementById(targetSlug);
+                        if (targetEl) targetEl.scrollIntoView({ behavior: "smooth" });
+                    }, 50);
+                }
+            }
+        }
+    }
+});
+
+</script>
+
+</body>
+</html>
